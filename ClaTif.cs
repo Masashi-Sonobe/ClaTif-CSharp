@@ -1642,7 +1642,11 @@ namespace TifRW
                 // Image-J対応 
                 else if (requiredValue[i].samplesPerPixel == 65536)
                 {
-                    if (requiredValue[i].bitsPerSample[0] == 16 * 65536)
+                    if (requiredValue[i].bitsPerSample[0] == 8 * 65536)
+                    {
+                        imgData[i].iImgType = ImgType.gryImg_8;
+                    }
+                    else if (requiredValue[i].bitsPerSample[0] == 16 * 65536)
                     {
                         imgData[i].iImgType = ImgType.gryImg_16;
                     }
